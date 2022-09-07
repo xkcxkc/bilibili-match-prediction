@@ -76,11 +76,11 @@ public class MatchGame implements Task {
                     log.info("当前赔率为:  {}:{}", teamA.get("odds").getAsDouble(), teamB.get("odds").getAsDouble());
 
                     if (teamA.get("odds").getAsDouble() >= teamB.get("odds").getAsDouble()) {
-                        teamId = teamB.get("detail_id").getAsInt();
-                        teamName = teamB.get("option").getAsString();
-                    } else {
                         teamId = teamA.get("detail_id").getAsInt();
                         teamName = teamA.get("option").getAsString();
+                    } else {
+                        teamId = teamB.get("detail_id").getAsInt();
+                        teamName = teamB.get("option").getAsString();
                     }
 
                     log.info("拟预测的队伍是:{},预测硬币数为:{}", teamName, coinNumber);
